@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.targets = Directory.Build.targets
 		nuget.config = nuget.config
 		Packages.props = Packages.props
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.FunctionalTests", "tests\Petshop.FunctionalTests\Petshop.FunctionalTests.csproj", "{7D84EFEE-A7D9-44AD-A0A3-38EC7882D94C}"
@@ -35,7 +36,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.IntegrationTests", 
 		{220361D6-9C76-4E3F-BD34-3C7B50E2CA4D} = {220361D6-9C76-4E3F-BD34-3C7B50E2CA4D}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petshop.SharedKernel", "src\Petshop.SharedKernel\Petshop.SharedKernel.csproj", "{744AD1DC-E83E-4ACE-BE57-395395D6E357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Petshop.SharedKernel", "src\Petshop.SharedKernel\Petshop.SharedKernel.csproj", "{744AD1DC-E83E-4ACE-BE57-395395D6E357}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
