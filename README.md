@@ -1,6 +1,6 @@
-[![Build Status](https://dev.azure.com/ardalis/CleanArchitecture/_apis/build/status/ardalis.CleanArchitecture?branchName=master)](https://dev.azure.com/ardalis/CleanArchitecture/_build/latest?definitionId=3&branchName=master)
-![Test Status](https://img.shields.io/azure-devops/tests/ardalis/CleanArchitecture/3.svg)
-[![Test Coverage](https://img.shields.io/azure-devops/coverage/ardalis/CleanArchitecture/3.svg)](https://dev.azure.com/ardalis/CleanArchitecture/_build?definitionId=3)
+[![Build Status](https://dev.azure.com/ardalis/Petshop/_apis/build/status/ardalis.Petshop?branchName=master)](https://dev.azure.com/ardalis/Petshop/_build/latest?definitionId=3&branchName=master)
+![Test Status](https://img.shields.io/azure-devops/tests/ardalis/Petshop/3.svg)
+[![Test Coverage](https://img.shields.io/azure-devops/coverage/ardalis/Petshop/3.svg)](https://dev.azure.com/ardalis/Petshop/_build?definitionId=3)
 
 # Clean Architecture
 
@@ -9,14 +9,14 @@ A starting point for Clean Architecture with ASP.NET Core. [Clean Architecture](
 ## Give a Star! :star:
 If you like or are using this project to learn or start your solution, please give it a star. Thanks!
 
-## *Now available as a [project template](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.CleanArchitecture) within Visual Studio.*
+## *Now available as a [project template](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Petshop) within Visual Studio.*
 
 ## Versions
 
 The master branch is now using .NET Core Version 3.0. If you need a 2.x version use one of these tagged commits:
 
-- [2.2](https://github.com/ardalis/CleanArchitecture/tree/dotnet-core-2.2)
-- [2.0](https://github.com/ardalis/CleanArchitecture/tree/dotnet-core-2.0)
+- [2.2](https://github.com/ardalis/Petshop/tree/dotnet-core-2.2)
+- [2.0](https://github.com/ardalis/Petshop/tree/dotnet-core-2.0)
 
 ## Learn More
 
