@@ -1,3 +1,3 @@
 # Pet Shop
 
-Demo Project
+Demo Project, should require pull requests for master branch.
