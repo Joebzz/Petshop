@@ -2,7 +2,7 @@
 using Petshop.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Petshop.Web.Pages.ToDoRazorPage
+namespace Petshop.Web.Pages.PetRazorPage
 {
     public class PopulateModel : PageModel
     {

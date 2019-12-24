@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Petshop.Infrastructure.Data.Config
 {
-    public class ToDoConfiguration : IEntityTypeConfiguration<ToDoItem>
+    public class PetConfiguration : IEntityTypeConfiguration<Pet>
     {
-        public void Configure(EntityTypeBuilder<ToDoItem> builder)
+        public void Configure(EntityTypeBuilder<Pet> builder)
         {
-            builder.Property(t => t.Title)
+            builder.Property(t => t.Name)
                 .IsRequired();
         }
     }

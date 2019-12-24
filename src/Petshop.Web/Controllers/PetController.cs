@@ -7,19 +7,19 @@ using System.Linq;
 
 namespace Petshop.Web.Controllers
 {
-    public class ToDoController : Controller
+    public class PetController : Controller
     {
         private readonly IRepository _repository;
 
-        public ToDoController(IRepository repository)
+        public PetController(IRepository repository)
         {
             _repository = repository;
         }
 
         public IActionResult Index()
         {
-            var items = _repository.List<ToDoItem>()
-                            .Select(ToDoItemDTO.FromToDoItem);
+            var items = _repository.List<Pet>()
+                            .Select(PetDTO.FromPet);
             return View(items);
         }
 

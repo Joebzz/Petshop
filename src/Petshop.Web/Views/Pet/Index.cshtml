@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Pet List";
+}
+@model IEnumerable<Petshop.Web.ApiModels.PetDTO>
+<h2>Pets (MVC View)</h2>
+<ul>
+@foreach (var item in Model)
+{
+    <li>@item.Name<br/>@item.Description</li>
+}
+</ul>

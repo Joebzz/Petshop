@@ -9,11 +9,11 @@ using Xunit;
 
 namespace Petshop.FunctionalTests.Api
 {
-    public class ApiToDoItemsControllerList : IClassFixture<CustomWebApplicationFactory<Startup>>
+    public class ApiPetsControllerList : IClassFixture<CustomWebApplicationFactory<Startup>>
     {
         private readonly HttpClient _client;
 
-        public ApiToDoItemsControllerList(CustomWebApplicationFactory<Startup> factory)
+        public ApiPetsControllerList(CustomWebApplicationFactory<Startup> factory)
         {
             _client = factory.CreateClient();
         }
@@ -21,15 +21,15 @@ namespace Petshop.FunctionalTests.Api
         [Fact]
         public async Task ReturnsTwoItems()
         {
-            var response = await _client.GetAsync("/api/todoitems");
+            var response = await _client.GetAsync("/api/pets");
             response.EnsureSuccessStatusCode();
             var stringResponse = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<IEnumerable<ToDoItem>>(stringResponse).ToList();
+            var result = JsonConvert.DeserializeObject<IEnumerable<Pet>>(stringResponse).ToList();
 
             Assert.Equal(3, result.Count());
-            Assert.Contains(result, i => i.Title == SeedData.ToDoItem1.Title);
-            Assert.Contains(result, i => i.Title == SeedData.ToDoItem2.Title);
-            Assert.Contains(result, i => i.Title == SeedData.ToDoItem3.Title);
+            Assert.Contains(result, i => i.Name == SeedData.Pet1.Name);
+            Assert.Contains(result, i => i.Name == SeedData.Pet2.Name);
+            Assert.Contains(result, i => i.Name == SeedData.Pet3.Name);
             //Assert.Equal(1, result.Count(a => a == SeedData.ToDoItem1));
             //Assert.Equal(1, result.Count(a => a == SeedData.ToDoItem2));
             //Assert.Equal(1, result.Count(a => a == SeedData.ToDoItem3));

@@ -1,0 +1,10 @@
+﻿@page
+@model Petshop.Web.Pages.PetRazorPage.IndexModel
+
+<h2>Pets (Razor Page)</h2>
+<ul>
+    @foreach (var item in Model.Pets)
+    {
+        <li>@item.Name<br />@item.Description</li>
+    }
+</ul>

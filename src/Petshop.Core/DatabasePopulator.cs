@@ -6,27 +6,27 @@ namespace Petshop.Core
 {
     public static class DatabasePopulator
     {
-        public static int PopulateDatabase(IRepository todoRepository)
+        public static int PopulateDatabase(IRepository petRepository)
         {
-            if (todoRepository.List<ToDoItem>().Count() >= 5) return 0;
+            if (petRepository.List<Pet>().Count() >= 5) return 0;
 
-            todoRepository.Add(new ToDoItem
+            petRepository.Add(new Pet
             {
-                Title = "Get Sample Working",
-                Description = "Try to get the sample to build."
+                Name = "Rex",
+                Description = "Rex is a loving dog."
             });
-            todoRepository.Add(new ToDoItem
+            petRepository.Add(new Pet
             {
-                Title = "Review Solution",
-                Description = "Review the different projects in the solution and how they relate to one another."
+                Name = "Steve",
+                Description = "Steve is a loving cat."
             });
-            todoRepository.Add(new ToDoItem
+            petRepository.Add(new Pet
             {
-                Title = "Run and Review Tests",
-                Description = "Make sure all the tests run and review what they are doing."
+                Name = "Archer",
+                Description = "Archer is a loving lizard."
             });
 
-            return todoRepository.List<ToDoItem>().Count;
+            return petRepository.List<Pet>().Count;
         }
     }
 }

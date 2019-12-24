@@ -11,13 +11,16 @@ namespace Petshop.UnitTests.Core.DomainEvents
         [Fact]
         public void NotReturnAnEmptyListOfAvailableHandlers()
         {
+            // arrange
             var container = ContainerSetup.BaseAutofacInitialization();
 
             var domainEventDispatcher = new DomainEventDispatcher(container);
-            var toDoItemCompletedEvent = new ToDoItemCompletedEvent(new ToDoItem());
+            var petSoldEvent = new PetSoldEvent(new Pet());
+            
+            // act
+            var handlersForEvent = domainEventDispatcher.GetWrappedHandlers(petSoldEvent);
 
-            var handlersForEvent = domainEventDispatcher.GetWrappedHandlers(toDoItemCompletedEvent);
-
+            // assert
             Assert.NotEmpty(handlersForEvent);
         }
     }

@@ -12,31 +12,32 @@ namespace Petshop.IntegrationTests.Data
         [Fact]
         public void UpdatesItemAfterAddingIt()
         {
-            // add an item
+            // arrange
             var repository = GetRepository();
-            var initialTitle = Guid.NewGuid().ToString();
-            var item = new ToDoItemBuilder().Title(initialTitle).Build();
+            var initialName = Guid.NewGuid().ToString();
+            var item = new PetBuilder().Name(initialName).Build();
 
             repository.Add(item);
 
             // detach the item so we get a different instance
             _dbContext.Entry(item).State = EntityState.Detached;
 
-            // fetch the item and update its title
-            var newItem = repository.List<ToDoItem>()
-                .FirstOrDefault(i => i.Title == initialTitle);
+            // act
+            var newItem = repository.List<Pet>()
+                .FirstOrDefault(i => i.Name == initialName);
             Assert.NotNull(newItem);
             Assert.NotSame(item, newItem);
-            var newTitle = Guid.NewGuid().ToString();
-            newItem.Title = newTitle;
+            var newName = Guid.NewGuid().ToString();
+            newItem.Name = newName;
 
             // Update the item
             repository.Update(newItem);
-            var updatedItem = repository.List<ToDoItem>()
-                .FirstOrDefault(i => i.Title == newTitle);
+            var updatedItem = repository.List<Pet>()
+                .FirstOrDefault(i => i.Name == newName);
 
+            // assert
             Assert.NotNull(updatedItem);
-            Assert.NotEqual(item.Title, updatedItem.Title);
+            Assert.NotEqual(item.Name, updatedItem.Name);
             Assert.Equal(newItem.Id, updatedItem.Id);
         }
     }

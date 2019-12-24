@@ -5,9 +5,9 @@ using Petshop.SharedKernel.Interfaces;
 
 namespace Petshop.Core.Services
 {
-    public class ItemCompletedEmailNotificationHandler : IHandle<ToDoItemCompletedEvent>
+    public class PetSoldEmailNotificationHandler : IHandle<PetSoldEvent>
     {
-        public Task Handle(ToDoItemCompletedEvent domainEvent)
+        public Task Handle(PetSoldEvent domainEvent)
         {
             Guard.Against.Null(domainEvent, nameof(domainEvent));
 

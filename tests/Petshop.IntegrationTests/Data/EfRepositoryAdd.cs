@@ -12,11 +12,11 @@ namespace Petshop.IntegrationTests.Data
         public void AddsItemAndSetsId()
         {
             var repository = GetRepository();
-            var item = new ToDoItemBuilder().Build();
+            var item = new PetBuilder().Build();
 
             repository.Add(item);
 
-            var newItem = repository.List<ToDoItem>().FirstOrDefault();
+            var newItem = repository.List<Pet>().FirstOrDefault();
 
             Assert.Equal(item, newItem);
             Assert.True(newItem?.Id > 0);

@@ -7,22 +7,28 @@ using Xunit;
 
 namespace Petshop.UnitTests.Core.Entities
 {
-    public class ItemCompletedEmailNotificationHandlerHandle
+    public class PetSoldEmailNotificationHandlerTests
     {
         [Fact]
         public async Task ThrowsExceptionGivenNullEventArgument()
         {
-            var handler = new ItemCompletedEmailNotificationHandler();
+            // arrange
+            var handler = new PetSoldEmailNotificationHandler();
 
+            // act 
+            // assert
             Exception ex = await Assert.ThrowsAsync<ArgumentNullException>(() => handler.Handle(null));
         }
 
         [Fact]
         public async Task DoesNothingGivenEventInstance()
         {
-            var handler = new ItemCompletedEmailNotificationHandler();
+            // arrange
+            var handler = new PetSoldEmailNotificationHandler();
 
-            await handler.Handle(new ToDoItemCompletedEvent(new ToDoItem()));
+            // act 
+            // assert
+            await handler.Handle(new PetSoldEvent(new Pet()));
         }
     }
 }

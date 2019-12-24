@@ -25,7 +25,7 @@ namespace Petshop.Infrastructure.Data
             _dispatcher = dispatcher;
         }
 
-        public DbSet<ToDoItem> ToDoItems { get; set; }
+        public DbSet<Pet> Pets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

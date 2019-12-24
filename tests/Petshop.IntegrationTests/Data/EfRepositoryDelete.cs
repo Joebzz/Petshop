@@ -10,18 +10,18 @@ namespace Petshop.IntegrationTests.Data
         [Fact]
         public void DeletesItemAfterAddingIt()
         {
-            // add an item
+            // arrange
             var repository = GetRepository();
-            var initialTitle = Guid.NewGuid().ToString();
-            var item = new ToDoItemBuilder().Title(initialTitle).Build();
+            var initialName = Guid.NewGuid().ToString();
+            var item = new PetBuilder().Name(initialName).Build();
             repository.Add(item);
 
-            // delete the item
+            // act
             repository.Delete(item);
 
-            // verify it's no longer there
-            Assert.DoesNotContain(repository.List<ToDoItem>(),
-                i => i.Title == initialTitle);
+            // assert
+            Assert.DoesNotContain(repository.List<Pet>(),
+                i => i.Name == initialName);
         }
     }
 }

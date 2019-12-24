@@ -3,13 +3,13 @@ using Petshop.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 
-namespace Petshop.Web.Pages.ToDoRazorPage
+namespace Petshop.Web.Pages.PetRazorPage
 {
     public class IndexModel : PageModel
     {
         private readonly IRepository _repository;
 
-        public List<ToDoItem> ToDoItems { get; set; }
+        public List<Pet> Pets { get; set; }
 
         public IndexModel(IRepository repository)
         {
@@ -18,7 +18,7 @@ namespace Petshop.Web.Pages.ToDoRazorPage
 
         public void OnGet()
         {
-            ToDoItems = _repository.List<ToDoItem>();
+            Pets = _repository.List<Pet>();
         }
     }
 }

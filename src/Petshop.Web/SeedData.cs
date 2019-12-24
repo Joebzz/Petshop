@@ -9,20 +9,25 @@ namespace Petshop.Web
 {
     public static class SeedData
     {
-        public static readonly ToDoItem ToDoItem1 = new ToDoItem
+        public static readonly Pet Pet1 = new Pet
         {
-            Title = "Get Sample Working",
-            Description = "Try to get the sample to build."
+            Name = "Rex",
+            Age = 4,
+            Description = "A loving dog looking for a good home."
         };
-        public static readonly ToDoItem ToDoItem2 = new ToDoItem
+
+        public static readonly Pet Pet2 = new Pet
         {
-            Title = "Review Solution",
-            Description = "Review the different projects in the solution and how they relate to one another."
+            Name = "Tom",
+            Age = 1,
+            Description = "A loving cat looking for a good home."
         };
-        public static readonly ToDoItem ToDoItem3 = new ToDoItem
+
+        public static readonly Pet Pet3 = new Pet
         {
-            Title = "Run and Review Tests",
-            Description = "Make sure all the tests run and review what they are doing."
+            Name = "Archer",
+            Age = 2,
+            Description = "A loving lizard looking for a good home."
         };
 
         public static void Initialize(IServiceProvider serviceProvider)
@@ -31,26 +36,24 @@ namespace Petshop.Web
                 serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>(), null))
             {
                 // Look for any TODO items.
-                if (dbContext.ToDoItems.Any())
+                if (dbContext.Pets.Any())
                 {
                     return;   // DB has been seeded
                 }
 
                 PopulateTestData(dbContext);
-
-
             }
         }
         public static void PopulateTestData(AppDbContext dbContext)
         {
-            foreach (var item in dbContext.ToDoItems)
+            foreach (var item in dbContext.Pets)
             {
                 dbContext.Remove(item);
             }
             dbContext.SaveChanges();
-            dbContext.ToDoItems.Add(ToDoItem1);
-            dbContext.ToDoItems.Add(ToDoItem2);
-            dbContext.ToDoItems.Add(ToDoItem3);
+            dbContext.Pets.Add(Pet1);
+            dbContext.Pets.Add(Pet2);
+            dbContext.Pets.Add(Pet3);
 
             dbContext.SaveChanges();
         }

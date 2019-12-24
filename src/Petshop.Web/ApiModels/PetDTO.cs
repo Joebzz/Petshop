@@ -8,22 +8,24 @@ using Petshop.Core.Entities;
 namespace Petshop.Web.ApiModels
 {
     // Note: doesn't expose events or behavior
-    public class ToDoItemDTO
+    public class PetDTO
     {
         public int Id { get; set; }
         [Required]
-        public string Title { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
         public string Description { get; set; }
-        public bool IsDone { get; private set; }
+        public bool IsSold { get; private set; }
 
-        public static ToDoItemDTO FromToDoItem(ToDoItem item)
+        public static PetDTO FromPet(Pet item)
         {
-            return new ToDoItemDTO()
+            return new PetDTO()
             {
                 Id = item.Id,
-                Title = item.Title,
+                Name = item.Name,
+                Age = item.Age,
                 Description = item.Description,
-                IsDone = item.IsDone
+                IsSold = item.IsSold
             };
         }
     }
